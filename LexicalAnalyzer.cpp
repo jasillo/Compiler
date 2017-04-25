@@ -5,10 +5,32 @@
 void LexicalAnalyzer::saveLexeme(TypeToken code)
 {
     Token *t = new struct Token;
-    t->token = code;
+    if (code == TypeToken::iden){
+        if (lexeme == "int")
+            t->token = TypeToken::pint;
+        else if (lexeme == "char")
+            t->token = TypeToken::pcha;
+        else if (lexeme == "bool")
+            t->token = TypeToken::pboo;
+        else if (lexeme == "if")
+            t->token = TypeToken::piff;
+        else if (lexeme == "else")
+            t->token = TypeToken::pels;
+        else if (lexeme == "void")
+            t->token = TypeToken::pvoi;
+        else if (lexeme == "return")
+            t->token = TypeToken::pret;
+        else if (lexeme == "while")
+            t->token = TypeToken::pwhi;
+        else if (lexeme == "for")
+            t->token = TypeToken::pfor;
+        else
+            t->token = code;
+    }else{
+        t->token = code;
+    }
     t->value = lexeme;
     myTokens.push_back(t);
-	//cout << "code: " << code << " lexeme: " << lexeme << endl;
 }
 
 LexicalAnalyzer::LexicalAnalyzer()
@@ -108,7 +130,7 @@ bool LexicalAnalyzer::analyze(char* name)
             state = 0;
 			break;
         case 20: // identificadores y palabras reservada
-            if (isxdigit(c) || c == '_')
+            if (isdigit(c) || isalpha(c) || c == '_')
                 lexeme += c;
             else if (c == '\n' || c == ' '){
                 saveLexeme(TypeToken::iden);
@@ -201,6 +223,7 @@ bool LexicalAnalyzer::analyze(char* name)
 
 	}
 	fs.close();
+	return true;
 }
 
 bool LexicalAnalyzer::isMonoLexeme(char c, TypeToken t)
@@ -264,6 +287,6 @@ bool LexicalAnalyzer::isBiLexeme(char c, TypeToken t){
     return true;
 }
 void LexicalAnalyzer::printAll(){
-    for (int i=0; i<myTokens.size(); ++i)
+    for (unsigned int i=0; i<myTokens.size(); ++i)
         cout << "token: " << myTokens[i]->token << " lexeme: " << myTokens[i]->value << endl;
 }

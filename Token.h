@@ -6,7 +6,17 @@ using namespace std;
 enum TypeToken
 {
 	inva, //invalido
-	palr, //palabra reservada
+	pint,
+	pcha,
+	pboo,
+	piff,
+	pels,
+	pvoi,
+	pret,
+	pwhi,
+	pfor,
+	pusi, //using
+	pnam, //namespace
 	digi, //digito
 	cade, //cadena
 	iden, //identificador

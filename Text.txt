@@ -1,3 +1,9 @@
-+/<>!= /*ffdsfsdfs*/ "jfjfsfkjfs 1154d8v  )&/&"
+/*+/<>!=  "jfjfsfkjfs 1154d8v  )&/&"
 int a = 10.5;
-a = a+b
+a = a+b*/
+int a;
+if (a == 32)
+    555df
+else
+    dddd;
+return 0;
