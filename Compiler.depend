@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1497244212 source:c:\users\jorge asillo\documents\codeblocks\compiler\lexicalanalyzer.cpp
+	"LexicalAnalyzer.h"
+
+1496176805 c:\users\jorge asillo\documents\codeblocks\compiler\lexicalanalyzer.h
+	<string>
+	<iostream>
+	<fstream>
+	<ctype.h>
+	<vector>
+	"Token.h"
+
+1496176698 source:c:\users\jorge asillo\documents\codeblocks\compiler\main.cpp
+	"LexicalAnalyzer.h"
+
+1497245755 c:\users\jorge asillo\documents\codeblocks\compiler\token.h
+	<string>
+	<iostream>
+
