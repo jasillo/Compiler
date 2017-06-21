@@ -41,6 +41,7 @@ enum TypeToken
 	binario, // operadores binarios & |
 	opeTer, //operador ternario ?
 	neg, //negacion
+
     invalido, //invalido 32
 	S, //33
 	S_,
@@ -72,8 +73,8 @@ enum TypeToken
 
 struct Token {
     TypeToken token;
-    int line;
-    string value;
+    int line = 0;
+    string value ="";
 };
 
 #endif

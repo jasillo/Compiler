@@ -29,7 +29,7 @@ int main()
 	LexicalAnalyzer la;
 
     la.analyze((char*)"Text.txt", &listOfTokens);
-    printListOfTokens(&listOfTokens);
+    //printListOfTokens(&listOfTokens);
     cout<<endl;
 
     if (la.errors == 0){
@@ -37,6 +37,7 @@ int main()
         SintacticAnalizer sa;
 
         sa.analiyze(&listOfTokens, &myTree);
+        myTree.printTree();
     }else{
         cout << "ERRORES LEXICOS " <<endl;
         printLexicalErrors(&listOfTokens);

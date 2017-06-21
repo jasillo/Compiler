@@ -186,34 +186,35 @@ bool SintacticAnalizer::analiyze(vector<Token*> *lista, Tree *t)
     lista->back()->value = "$";
     lista->back()->line = 0;
     reverseVector(lista);
-    struct Token *token;
     syntacticStack.push_back(vacio);
     syntacticStack.push_back(S);
+    t->addRoot(S);
     vector<TypeToken> *produc;
     while (!lista->empty()){
-            cout<<"sintac : ";
+            /*cout<<"sintac : ";
             for (int i = 0; i<syntacticStack.size() ; ++i)
                 cout<<syntacticStack.at(i)<<" - ";
-            cout<<endl;
+            cout<<endl;*/
         if (lista->back()->token == syntacticStack.back()){
             syntacticStack.pop_back();
             lista->pop_back();
+
         }else{
             produc = getProduction(lista->back(),syntacticStack.back());
 
             if (produc == nullptr){
-                cout<<"error : "<< lista->back()->token <<endl;
+                cout<<"error sintactico : "<< lista->back()->token <<endl;
                 return false;
             }else if (produc->at(0) == vacio){
+                t->addChildren(produc);
                 syntacticStack.pop_back();
             }else{
+                t->addChildren(produc);
                 syntacticStack.pop_back();
                 for (int i = produc->size()-1; i>=0 ; --i)
                     syntacticStack.push_back(produc->at(i));
             }
         }
-
-
     }
     return true;
 }
@@ -234,11 +235,8 @@ vector<TypeToken>* SintacticAnalizer::getProduction(struct Token *t, TypeToken s
     int r,c;
     r = synStack - TypeToken::S;
     c = t->token;
-    cout<<r<<" - "<<c<<endl;
     if (syntacticTable[r][c].empty())
         return nullptr;
     return &syntacticTable[r][c];
-
-    return nullptr;
 }
 
