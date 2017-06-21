@@ -21,10 +21,10 @@
 	<string>
 	<iostream>
 
-1498069541 source:c:\users\jorge asillo\documents\codeblocks\compiler\tree.cpp
+1498074686 source:c:\users\jorge asillo\documents\codeblocks\compiler\tree.cpp
 	"Tree.h"
 
-1498068436 c:\users\jorge asillo\documents\codeblocks\compiler\tree.h
+1498071232 c:\users\jorge asillo\documents\codeblocks\compiler\tree.h
 	<vector>
 	"Token.h"
 
@@ -38,7 +38,7 @@
 
 1497887721 c:\users\jorge asillo\documents\codeblocks\compiler\sintaticanalizer.h
 
-1498070974 source:c:\users\jorge asillo\documents\codeblocks\compiler\sintacticanalizer.cpp
+1498074303 source:c:\users\jorge asillo\documents\codeblocks\compiler\sintacticanalizer.cpp
 	"SintacticAnalizer.h"
 
 1498007444 c:\users\jorge asillo\documents\codeblocks\compiler\sintacticanalizer.h

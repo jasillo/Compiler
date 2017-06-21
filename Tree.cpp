@@ -36,6 +36,7 @@ bool Tree::addChildren(vector<TypeToken> *child)
 void Tree::updateActualNode()
 {
     Node *tmp = actualNode;
+
     if (!childrenNoTerminal(tmp)){
         tmp = tmp->father;
         while (tmp){
@@ -43,20 +44,21 @@ void Tree::updateActualNode()
                 return;
             tmp = tmp->father;
         }
+        actualNode = nullptr;
     }
 }
 
 bool Tree::childrenNoTerminal(Node *n)
 {
     for (int i=0; i<n->children.size(); ++i){
-        if (n->children[i]->token > TypeToken::invalido){
-            if (!n->children[i]->visited){
-                n->children[i]->visited = true;
+        if (!n->children[i]->visited){
+            n->children[i]->visited = true;
+            if (n->children[i]->token != vacio){
                 actualNode = n->children[i];
                 return true;
             }
-            n->children[i]->visited = true;
         }
+        n->children[i]->visited = true;
     }
     return false;
 }
@@ -65,7 +67,7 @@ void Tree::printTree()
 {
     cout<<root->token<<endl;
     for (int i=0; i<root->children.size(); ++i)
-        printNode(root->children[i],3);
+        printNode(root->children[i],2);
 }
 
 void Tree::printNode(Node *n, int level)
@@ -74,12 +76,17 @@ void Tree::printNode(Node *n, int level)
     cout<<space<<n->token<<endl;
 
     for (int i=0; i<n->children.size(); ++i)
-        printNode(n->children[i],level+3);
+        printNode(n->children[i],level+2);
 }
 
 bool Tree::addTerminalToken(Token *t)
 {
-
-    return false;
+    if (!actualNode)
+        return false;
+    if (actualNode->token != t->token)
+        cout<<"error de token "<<actualNode->token<<" - "<< t->token <<endl;
+    actualNode->myToken = t;
+    updateActualNode();
+    return true;
 }
 

@@ -196,6 +196,7 @@ bool SintacticAnalizer::analiyze(vector<Token*> *lista, Tree *t)
                 cout<<syntacticStack.at(i)<<" - ";
             cout<<endl;*/
         if (lista->back()->token == syntacticStack.back()){
+            t->addTerminalToken(lista->back());
             syntacticStack.pop_back();
             lista->pop_back();
 
