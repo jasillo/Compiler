@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +23,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -34,8 +36,12 @@
 		</Compiler>
 		<Unit filename="LexicalAnalyzer.cpp" />
 		<Unit filename="LexicalAnalyzer.h" />
+		<Unit filename="SintacticAnalizer.cpp" />
+		<Unit filename="SintacticAnalizer.h" />
 		<Unit filename="Text.txt" />
 		<Unit filename="Token.h" />
+		<Unit filename="Tree.cpp" />
+		<Unit filename="Tree.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

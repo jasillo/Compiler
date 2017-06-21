@@ -1,14 +1,12 @@
-//using namespace std;
 
 int main()
 {
-    int n1, n2, max;
+    //int n1, n2, max;
 
-    n1 = 5;
-    n2 = n1+5;
+    n1 = 5+1-int(3.5);
+    //n2 = 3+5;
 
-    // maximum value between n1 and n2 is stored in max
-    max = (n1 > n2) ? n1 : n2;
+
 
     int a = 0;
     while(true){
@@ -18,8 +16,10 @@ int main()
             a = a +2;
         }
         else
-            a = a+1;
+            break;
     }
 
     return a;
+
 }
+

@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1497244212 source:c:\users\jorge asillo\documents\codeblocks\compiler\lexicalanalyzer.cpp
+1498009656 source:c:\users\jorge asillo\documents\codeblocks\compiler\lexicalanalyzer.cpp
 	"LexicalAnalyzer.h"
 
-1496176805 c:\users\jorge asillo\documents\codeblocks\compiler\lexicalanalyzer.h
+1497889517 c:\users\jorge asillo\documents\codeblocks\compiler\lexicalanalyzer.h
 	<string>
 	<iostream>
 	<fstream>
@@ -10,10 +10,39 @@
 	<vector>
 	"Token.h"
 
-1496176698 source:c:\users\jorge asillo\documents\codeblocks\compiler\main.cpp
+1497989836 source:c:\users\jorge asillo\documents\codeblocks\compiler\main.cpp
+	"Token.h"
+	"Tree.h"
 	"LexicalAnalyzer.h"
+	"SintacticAnalizer.h"
+	<vector>
 
-1497245755 c:\users\jorge asillo\documents\codeblocks\compiler\token.h
+1498008627 c:\users\jorge asillo\documents\codeblocks\compiler\token.h
 	<string>
 	<iostream>
+
+1497883909 source:c:\users\jorge asillo\documents\codeblocks\compiler\tree.cpp
+	"Tree.h"
+
+1497887209 c:\users\jorge asillo\documents\codeblocks\compiler\tree.h
+	<vector>
+	"Token.h"
+
+1497887508 c:\users\jorge asillo\documents\codeblocks\compiler\sintacticanalyzer.h
+
+1497886748 source:c:\users\jorge asillo\documents\codeblocks\compiler\sintacticanalyzer.cpp
+	"SintacticAnalyzer.h"
+
+1497887697 source:c:\users\jorge asillo\documents\codeblocks\compiler\sintaticanalizer.cpp
+	"SintaticAnalizer.h"
+
+1497887721 c:\users\jorge asillo\documents\codeblocks\compiler\sintaticanalizer.h
+
+1498009417 source:c:\users\jorge asillo\documents\codeblocks\compiler\sintacticanalizer.cpp
+	"SintacticAnalizer.h"
+
+1498007444 c:\users\jorge asillo\documents\codeblocks\compiler\sintacticanalizer.h
+	<vector>
+	"Token.h"
+	"Tree.h"
 
